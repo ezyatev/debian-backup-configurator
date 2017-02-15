@@ -1,0 +1,5 @@
+---
+
+user: "server_backup"
+shell: "/bin/bash"
+home: "/home/{{ user }}"

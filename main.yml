@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  tasks:
+    - include_vars:
+        file: "secrets.yml"
+        name: secrets
+    - include: "user.yml"
+
+- hosts: mysql_servers
+  tasks:
+    - include: "mysql.yml"
+
+- hosts: postgresql_servers
+  tasks:
+    - include: "postgresql.yml"

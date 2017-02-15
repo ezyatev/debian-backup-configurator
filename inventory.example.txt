@@ -1,0 +1,5 @@
+[mysql_servers]
+host1
+
+[postgresql_servers]
+host2

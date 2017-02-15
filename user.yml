@@ -1,0 +1,18 @@
+- name: Create an user
+  user: name={{ user }}
+        home={{ home }}
+        shell={{ shell }}
+
+- name: Set authorized key took from file
+  authorized_key:
+    user: "{{ user }}"
+    state: present
+    key: "{{ secrets.pubkey }}"
+
+- name: Allow to run archive command as root without password
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^{{ user }} ALL='
+    line: '{{ user }} ALL = (root) NOPASSWD: /bin/tar'
+    validate: 'visudo -cf %s'
