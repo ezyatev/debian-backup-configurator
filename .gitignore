@@ -2,3 +2,4 @@
 debian-backup-configurator.iml
 inventory
 secrets.yml
+*.retry
