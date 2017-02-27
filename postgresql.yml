@@ -1,3 +1,6 @@
+- name: "Ensure the python psycopg2 module is installed"
+  apt: package=python-psycopg2 state=installed
+
 - name: "Create PostgreSQL user with name {{ user }} and password with privileges"
   sudo: yes
   sudo_user: postgres
